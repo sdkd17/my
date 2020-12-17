@@ -1,38 +1,250 @@
+
+* {
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+ 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: calc(100vh * 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* text-align: center; */
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.main-container {
+  background-color: #111111;
+  min-height: calc(100vh * 0.9);
+  /* min-width: 100vw; */
+  padding: 5px;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.general-stats {
+  min-height: calc(100vh *0.4);
+  /* max-width: 90vW; */
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.title { /*Modifica ambos titulos leaders y Standings*/
+  text-align: center;
+  color: white;
+  font-size: calc(10px + 2vmin);
+}
+
+/********************************************
+ *                STANDINGS                 *
+*********************************************/
+.standings {
+  background-color: #282c34;
+  min-width: calc(100vw*0.4); 
+  max-width: calc(100vw*0.4);
+  max-height: calc(100vh*0.4);
+  overflow: auto;
+}
+
+.s-options {
+  min-width: calc(100vw*0.4);
+  display: inline-flex;
+  justify-content: center;
+}
+.s-options  button {
+  background-color: rgb(21, 99, 167);
+  border: none;
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2vmin;
+  
+}
+
+.s-options  button:hover {
+  background-color: white;
+  text-decoration: underline;
+  color: rgb(21, 99, 167);
+}
+
+.s-options  button.active {
+  background-color: white;
+  text-decoration: underline;
+  color: rgb(21, 99, 167);
+}
+
+.s-table {
+  overflow: auto;
+  background-color: white;
+  /* padding: 5px; */
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  /* justify-content: space-around; */
+}
+
+.s-table-cell {
+ 
+  flex-grow: 1;
+  list-style: none;
+  /* overflow: hidden; */
+}
+
+.s-table--2cols > .s-table-cell {
+  width: 50%;
+}
+.s-table--3cols > .s-table-cell {
+  width: 33.3%;
+}
+.s-table--4cols > .s-table-cell {
+  width: 25%;
+}
+
+.s-table--18cols > .s-table-cell {
+  width: 5.5%;
+}
+
+
+
+/********************************************
+ *                 LEADERS                  *
+*********************************************/
+.leaders {
+  background-color:#282c34;
+  min-width: calc(100vw*0.4);
+  max-width: calc(100vw*0.4);
+  max-height: calc(100vh*0.4); 
+}
+
+
+
+/********************************************
+ *                GAMES                 *
+*********************************************/
+.games-container {
+  background-color: #111111;
+  padding: 5px;
+}
+
+.games {
+  background-color: #282c34;
+  
+  /* min-height: calc(100vh*0.5);
+  min-width: calc(100vw*0.4); */
+}
+
+.games-table {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  
+}
+
+.games-table > button {
+  text-decoration: none;
+  color: black;
+  font-size: 2vmin;
+}
+
+
+.game-card{
+  flex-grow: 1;
+  padding: 5px;
+  background-color: cornsilk;
+  border: solid 1px wheat;
+  max-width: 100px;
+  min-width: 60px;
+  
+}
+
+
+.game-card > .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-card > .row > .score {
+  font-weight: bold;
+}
+
+.full-game-stats > .s-table-cell{
+  border-bottom: solid 1px rgb(21, 99, 167);
+  padding-top: 1vmin;
+  /* padding: 1vmin; */
+}
+.full-game-stats > .center{
+
+  text-align: center;
+  font-weight: bold;
+  font-size: 2vmin;
+
+}
+
+.full-game-stats > .right{
+
+  text-align: right;
+}
+
+.full-game-stats > .table-title{
+  padding: 2vmin;
+  color:white;
+  background-color: rgb(21, 99, 167);
+
+
+  font-size: calc(2px+2vmin);
+  font-weight: bold;
+
+}
+
+/********************************************
+ *                PLAYERS                   *
+*********************************************/
+.p-table {
+  overflow: auto;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.p-table-cell{
+  flex-grow: 1;
+  list-style: none;
+  padding: 0.2em;
+  text-align: center;
+}
+
+.players-table {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.players-table-title{
+  font-weight: bold;
+  border-bottom: solid 2px black;
+}
+
+.players-table-value{
+
+}
+
+.player-stat-col {
+  
+  border-right-style: solid;
+  border-right-color: black;
+  border-right-width: 2px;
+}
+
+.player-stat-col:hover {
+  background-color: ghostwhite;
 }

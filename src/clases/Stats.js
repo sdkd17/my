@@ -45,7 +45,7 @@ export class Stats {
   }
 
   makeTotals() {
-    let a = 2+2;
+    
     this['FG'] = this['fgm'].toString() + '/' + this['fga'].toString();
     this['FG3'] = this['fg3m'].toString() + '/' + this['fg3a'].toString();
     this['FT'] = this['ftm'].toString() + '/' + this['fta'].toString();
